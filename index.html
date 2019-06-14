@@ -191,7 +191,7 @@ ground=new THREE.Mesh(
 	new THREE.PlaneGeometry(6000,5000),
 	new THREE.MeshPhongMaterial({
 		color:0x27DF30,
-		side: THREE.DoubleSide
+		side: THREE.FrontSide
 		})
 	);
 //10,11
@@ -257,7 +257,7 @@ floor5.position.set(-1200,10,-450);
 	var box1 = new THREE.BoxGeometry( 300, 700, 300 );
 	var material1 = new THREE.MeshPhongMaterial( {map:texture10} );
 	var cube1= new THREE.Mesh( box1, material1 );
-	cube1.position.set(1500,330,-500);
+	cube1.position.set(1500,400,-500);
 	cube1.name="Building 10 \n";
 	cube1.userData=" Building 10 offers a range a bright and airy classrooms. Building 10 also houses Student Centre and International Student Centre.";
 	cube1.castShadow=true;
@@ -267,7 +267,7 @@ floor5.position.set(-1200,10,-450);
 	var box2 = new THREE.BoxGeometry( 600, 900, 400 );
 	var material2 = new THREE.MeshPhongMaterial( {map:texture11} );
 	var cube2= new THREE.Mesh( box2, material2 );
-	cube2.position.set(1500,250,-900);
+	cube2.position.set(1500,400,-900);
 	cube2.name="Faculty of Engineering and IT (FEIT) Building.\n";
 	cube2.userData="FEIT Building opened in 2014, and accommodates the Faculty of Engineering and IT, along with many of its specialist facilities.";
 	cube2.castShadow=true;
