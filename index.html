@@ -19,9 +19,7 @@
       height: 20%; /* Full height */
       overflow: auto; /* Enable scroll if needed */
       background-color:#9DC0F3; /* Fallback color */
-
     }
-
     /* Modal Content */
     .modal-content {
       background-color: white;
@@ -32,7 +30,6 @@
     }
   </style>
   </head>
-
   <body>
   <!--include the three.js library-->
    <script src="js/OrbitControls.js"> </script>
@@ -118,7 +115,6 @@
             sun.color = new THREE.Color(colorControls.color0);
             sunsphere.color = new THREE.Color(colorControls.color0);
         }
-
 var init = function () {
   renderer = new THREE.WebGLRenderer({
     alpha: true,
@@ -144,7 +140,6 @@ var init = function () {
   camera.position.x = 900;
   camera.lookAt(new THREE.Vector3(0,0,1));
   scene.add(camera);
-
   // snow
           var textureLoader = new THREE.TextureLoader();
           var sprite1 = textureLoader.load( 'snowflake1.png' );
@@ -152,7 +147,6 @@ var init = function () {
           var sprite3 = textureLoader.load( 'snowflake3.png' );
           var sprite4 = textureLoader.load( 'snowflake4.png' );
           var sprite5 = textureLoader.load( 'snowflake5.png' );
-
           for ( var i = 0; i < 7000; i ++ ) {
             var x = Math.random() * 4000 - 1000;
             var y = Math.random() * 4000 - 1000;
@@ -160,7 +154,6 @@ var init = function () {
             vertices.push( x, y, z );
           }
           geometry.addAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
-
           parameters = [
             [[ 1.0, 0.2, 0.5 ], sprite2, 20 ],
             [[ 0.95, 0.1, 0.5 ], sprite3, 15 ],
@@ -168,7 +161,6 @@ var init = function () {
             [[ 0.85, 0, 0.5 ], sprite5, 8 ],
             [[ 0.80, 0, 0.5 ], sprite4, 5 ]
           ];
-
           for ( var i = 0; i < parameters.length; i ++ ) {
             var color = parameters[ i ][ 0 ];
             var sprite = parameters[ i ][ 1 ];
@@ -210,7 +202,6 @@ ground=new THREE.Mesh(
       side: THREE.FrontSide
     })
   );
-
 	floor.rotation.x=-Math.PI/2;
 	floor.position.set(1550,10,-450);
   ground.rotation.x = -Math.PI / 2;
@@ -224,10 +215,9 @@ ground=new THREE.Mesh(
       side: THREE.FrontSide
     })
   );
-
 floor2.rotation.x=-Math.PI/2;
-	floor2.position.set(-2200,10,1250);
-//2,1,7,4,3,9,12
+floor2.position.set(-2200,10,1250);
+//the condense floor
 floor3 = new THREE.Mesh(
     new THREE.PlaneGeometry(1500, 1500),
     new THREE.MeshPhongMaterial({
@@ -257,8 +247,6 @@ floor5=new THREE.Mesh(
 	);
 floor5.rotation.x=-Math.PI/2;
 floor5.position.set(-1200,10,-450);
-// floor.receiveShadow=true;
-// floor2.receiveShadow=true;
   scene.add(ground);
   scene.add(floor);
   scene.add(floor2);
@@ -306,7 +294,6 @@ floor5.position.set(-1200,10,-450);
 		scene.add(cube3);
 		scene.add(cube4);
 	    }
-
 //5a
 	var box5 = new THREE.BoxGeometry( 700, 200, 200 );
 	var material5 = new THREE.MeshPhongMaterial( {color:0xB2701A} );
@@ -324,7 +311,7 @@ floor5.position.set(-1200,10,-450);
 	cube5.castShadow=true;
 	cube6.castShadow=true;
 	scene.add( cube6 );
-
+//Building 5
 	var box7=new THREE.BoxGeometry(300,350,700);
 	var material7=new THREE.MeshPhongMaterial({color:0xB2701A});
 	var cube7=new THREE.Mesh(box7,material7);
@@ -358,7 +345,6 @@ floor5.position.set(-1200,10,-450);
 	cube8a.castShadow=true;
 	cube8b.castShadow=true;
 	scene.add(cube8b);
-
 //7
 	var box9=new THREE.BoxGeometry(1000,600,300);
 	var material9=new THREE.MeshPhongMaterial({map:texture9});
@@ -368,7 +354,6 @@ floor5.position.set(-1200,10,-450);
 	cube9.userData="The building is home to Faculty of Science administration and specialist facilities, and the Graduate School of Health.";
 	cube9.castShadow=true;
 	scene.add(cube9);
-
 //4
 	var box10=new THREE.BoxGeometry(300,600,700);
 	var material10=new THREE.MeshPhongMaterial({color:0xF7DE99});
@@ -378,7 +363,6 @@ floor5.position.set(-1200,10,-450);
 	cube10.userData="Building 4 is the science building which has science labs, computer labs, and areas for studying.";
 	cube10.castShadow=true;
 	scene.add(cube10);
-
 //3
 	var b1=new THREE.BoxGeometry(300,630,170);
 	var m1=new THREE.MeshPhongMaterial({color:0xF7DE99});
@@ -387,7 +371,6 @@ floor5.position.set(-1200,10,-450);
 	c1.userData="The building accommodates specialist facilities for the Faculty of Arts and Social Sciences.";
 	c1.castShadow=true;
 	c1.position.set(-400,310,-600);
-
 	var b2=new THREE.BoxGeometry(100,630,230);
 	var m2=new THREE.MeshPhongMaterial({color:0xF7DE99});
 	var c2=new THREE.Mesh(b2,m2);
@@ -395,7 +378,6 @@ floor5.position.set(-1200,10,-450);
 	c2.userData="The building accommodates specialist facilities for the Faculty of Arts and Social Sciences.";
 	c2.castShadow=true;
 	c2.position.set(-500,310,-800);
-
 	var b3=new THREE.BoxGeometry(300,630,170);
 	var m3=new THREE.MeshPhongMaterial({color:0xF7DE99});
 	var c3=new THREE.Mesh(b3,m3);
@@ -431,7 +413,6 @@ floor5.position.set(-1200,10,-450);
 	br.userData="This bridge connects Peter Johnson building with The Tower Building.";
 	br.position.set(-700,210,-480);
 	scene.add(br);
-
 //2
 	var box13=new THREE.BoxGeometry(500,350,300);
 	var material13=new THREE.MeshPhongMaterial({map:texture13});
@@ -441,7 +422,6 @@ floor5.position.set(-1200,10,-450);
 	cube13.userData="UTS Central, which is currently under construction and is intended as a central hub for the campus.";
 	cube13.castShadow=true;
 	scene.add(cube13);
-
 	var box14=new THREE.BoxGeometry(310,330,300);
 	var material14=new THREE.MeshPhongMaterial({map:texture13});
 	var cube14=new THREE.Mesh(box14,material14);
@@ -450,15 +430,12 @@ floor5.position.set(-1200,10,-450);
 	cube14.userData="UTS Central, which is currently under construction and is intended as a central hub for the campus.";
 	cube14.castShadow=true;
 	scene.add(cube14);
-
 //Raycasting
 var raycaster = new THREE.Raycaster();
 var mouse = new THREE.Vector2();
 window.addEventListener( 'click', onMouseClick, false );
-
 // add sky
 initSky();
-
 //function to close the pop-up information modal
 function closeButton(n){
   document.getElementById('myModal').style.display="none";
@@ -476,7 +453,6 @@ function onMouseClick( e ) {
         document.getElementById('myModal').innerHTML=content;
         document.getElementById('myModal').style.display="block";
         document.getElementById('but').addEventListener('click',closeButton);
-
 			}
 		}
 	}
@@ -492,7 +468,6 @@ function  streetlight(x,y,z,n){
         lamppost.position.set(x+loopa,y+75,z);
         lamppost.castShadow=true;
         scene.add(lamppost);
-
         var lanternsphere = new THREE.SphereGeometry(7,4,4);
         var lanternmatirial = new THREE.MeshLambertMaterial({color:0xffffff});
         var lantern = new THREE.Mesh(lanternsphere,lanternmatirial);
@@ -514,8 +489,7 @@ function  streetlight(x,y,z,n){
       streetlight(1100,0,280,4);
       streetlight(-1400,0,280,2);
       streetlight(-1400,0,580,2);
-      streetlight(-2400,0,530,3); //create street lights at some position
-
+      streetlight(-2400,0,530,3);
   //Create Tree function
   function createTree2nd(x,y,z){
   var tree = new THREE.Group();
@@ -540,9 +514,9 @@ function  streetlight(x,y,z,n){
 }
 createTree2nd(1600,40,1500);
 createTree2nd(1900,40,1300);
-createTree2nd(1800,40,1500); //Create 3 Trees
-  //Create a different type of Tree
-  function createTree(x,y,z){
+createTree2nd(1800,40,1500);
+//Create a different type of Tree
+function createTree(x,y,z){
 geometry = new THREE.BoxGeometry( 100, 100, 100 );
 var leaveDarkMaterial = new THREE.MeshLambertMaterial( { color: 0x91E56E } );
 var leaveLightMaterial = new THREE.MeshLambertMaterial( { color: 0xA2FF7A } );
@@ -569,7 +543,6 @@ leaveLight.scale.set( 1.1, 0.5, 1.1 );
 var ground = new THREE.Mesh( geometry, leaveDarkDarkMaterial );
 ground.position.set( x, y-100, z );
 ground.scale.set( 2.4, 0.8, 2.4 );
-
 tree = new THREE.Group();
 tree.add( leaveDark );
 tree.add( leaveLight );
@@ -582,10 +555,8 @@ scene.add( tree );
   }
 createTree (50,100,-280);
 createTree(500,100,-280);
-createTree(1500,100,500); //create 3 trees
-
+createTree(1500,100,500);
   // --- SETUP LIGHTS ----------------------------------------------------------------
-
    sun = new THREE.DirectionalLight(0xe8e3d9, 1);
    sun.position.set(0, 8000, 0);
    sun.target.position.set(0, 0, 0);
@@ -607,43 +578,34 @@ createTree(1500,100,500); //create 3 trees
    sunsphere.castShadow=false;
    scene.add(sunsphere);
    scene.add(sun);
-
   // --- INTERACTION STUFF -----------------------------------------------------------
-  var controls = new THREE.OrbitControls(camera, container);
+var controls = new THREE.OrbitControls(camera, container);
   controls.enableDamping = true;
   controls.enableZoom = false;
   controls.maxPolarAngle = Math.PI * 85 / 180;
   controls.minPolarAngle = Math.PI / 4;
 };
-
 var loop = function () {
   render()
   renderer.render(scene, camera);
   requestAnimationFrame(loop);
 };
-
 window.addEventListener( 'resize', function() {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-
   renderer.setSize(window.innerWidth, window.innerHeight);
 }, false);
-
 init();
 loop();
-
-//controls
+//Controls
 controls = new THREE.OrbitControls( camera, renderer.domElement );
 window.addEventListener( 'resize', function() {
   windowHalfX = window.innerWidth / 2;
-
 	windowHalfY = window.innerHeight / 2;
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
-
   renderer.setSize(window.innerWidth, window.innerHeight);
 }, false);
-
 //Create GUI Controller
 var gui;
   gui = new dat.GUI();
@@ -655,23 +617,8 @@ var gui;
        var lightcolor=gui.addFolder('suncolor');
        lightcolor.addColor(colorControls,'color0').onChange(updateSun);
   switchlight.add(streetlightOption,'switch',['on','off']).onChange(streetlightControl);
-  var params = {
-    SnowOption: "Off",
-  };
-  gui.add(params, 'SnowOption',['On','Off'] ).onChange(SnowControl);
-function SnowControl(){
-  if(params.SnowOption=='Off'){
-  for (var i = objectArray.length - 1; i >= 0; i--)
-      scene.remove(objectArray[i]);
-  }
-  else if (params.SnowOption=='On')
-    {
-    for (var i = objectArray.length - 1; i >= 0; i--)
-        scene.add(objectArray[i]);
-  }
-}
   gui.open();
-  //change ground
+  //Change ground
   var changeGround=gui.addFolder('Change Ground');
   var groundControl = {
            season: "Spring"
@@ -708,6 +655,7 @@ function SnowControl(){
     scene.add(object);
   });
     }
+//User Control
 function onDocumentKeyPress( event ) {
         var keyCode = event.which;
         var positionDelta = 70;
@@ -764,6 +712,7 @@ function onDocumentKeyPress( event ) {
             camera.rotation.y -= rotationDelta;
         }
     };
+    //Create the skydome
     function initSky() {
     				// Add Sky
     				sky = new THREE.Sky();
@@ -777,7 +726,6 @@ function onDocumentKeyPress( event ) {
     				sunSphere.position.y = 30000;
     				sunSphere.visible = false;
     			//	scene.add( sunSphere );
-
             /// GUI
     				var effectController = {
     					turbidity: 10,
@@ -806,11 +754,10 @@ function onDocumentKeyPress( event ) {
     					uniforms[ "sunPosition" ].value.copy( sunSphere.position );
     					renderer.render( scene, camera );
     				}
-
-    		/*	var gui = new dat.GUI();
+    		var gui = new dat.GUI();
     				gui.add( effectController, "MorningToEvening", 0, 1, 0.0001 ).onChange( guiChanged );
     				gui.add( effectController, "SpringToWinter", 0, 1, 0.0001 ).onChange( guiChanged );
-    				gui.add( effectController, "sun" ).onChange( guiChanged ); */
+    				gui.add( effectController, "sun" ).onChange( guiChanged );
     				guiChanged();
     }
     //Camera Direction Control
